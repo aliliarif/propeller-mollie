@@ -1,7 +1,18 @@
 # Propel.us Nuxt module
 
 <a href="https://propel.us/"><img src="https://propel.us/wp-content/themes/ecs-propeller/assets/build/images/theme/logo-blue.png" height="100px" /></a> <br>
-This integration is being developed and maintained by [Propeller](https://propel.us)
+
+## Overview
+
+![Alt text](/assets/images/payment-flow.png?raw=true "Payment Flow") <br>
+
+## Extension module
+
+The extension module acts as a middleware between Propeller platform and Payment Service Provider. Once Extensions is configured to call PSP, for every payment created or update, Propeller GraphQL API is called to register that transaction.
+
+## Notification module
+
+Notification module receives asynchronous notifications sent by Payment Service Provider. Through notifications, PSP provides asynchronously payment status changes like paid, authorization, charge, or refund of the payment. The notification module processes the notification sent by PSP and matches the Propeller payment for this notification, then modifies Propeller payment and order accordingly.
 
 ## How to install
 
