@@ -18,6 +18,6 @@
     "lib": ["es6", "es7", "dom"],
     "strict": false
   },
-  "include": ["src", "test", "index.ts"],
+  "include": ["src", "test", "src/index.ts"],
   "exclude": ["node_modules", "lib", "**/*.spec.ts"]
 }

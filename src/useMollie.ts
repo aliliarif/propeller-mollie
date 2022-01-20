@@ -1,6 +1,6 @@
 /* eslint-disable camelcase, @typescript-eslint/camelcase */
 import axios from 'axios';
-import { getExtensionProxyUrl } from '../configuration';
+import { getExtensionProxyUrl } from './configuration';
 
 const useMollie = () => {
   const makePayment = async ({
@@ -17,7 +17,6 @@ const useMollie = () => {
     };
 
     try {
-      // const { data } = await axios.post(`/mollie`, paymentData);
       const { data } = await axios.post(getExtensionProxyUrl(), paymentData);
       return data;
     } catch (err) {

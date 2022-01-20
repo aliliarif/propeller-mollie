@@ -1,10 +1,12 @@
-# Propel.us Nuxt module
+# Propel.us Mollie Nuxt module
 
-<a href="https://propel.us/"><img src="https://propel.us/wp-content/themes/ecs-propeller/assets/build/images/theme/logo-blue.png" height="100px" /></a> <br>
+<div align="center">
+<a href="https://propel.us/"><img src="https://propel.us/wp-content/themes/ecs-propeller/assets/build/images/theme/logo-blue.png" height="100px" /></a> 
+</div>
 
 ## Overview
 
-![Alt text](/assets/images/payment-flow.png?raw=true "Payment Flow") <br>
+![propeller-mollie](https://user-images.githubusercontent.com/13923889/150364042-bcba5683-4ea1-4289-b9a4-ddb45d4b4ae1.png) <br>
 
 ## Extension module
 
@@ -16,17 +18,16 @@ Notification module receives asynchronous notifications sent by Payment Service 
 
 ## How to install
 
-<!-- 1. Open your theme directory and run: --->
+1. Open your theme directory and run: -
 
-<!-- ```
+```
 yarn add @propeller-commerce/propeller-mollie
-``` -->
+```
 
 2. Open your `nuxt.config.js`
 3. At the bottom of `modules` add:
 
 ```js
-// ['@propeller-commerce/propeller-mollie/nuxt', {
 ['@propeller-commerce/propeller-mollie/nuxt', {
     propellerKey: 'PROPELLER_KEY',
     propellerApiUrl: 'PROPELLER_API_URL',

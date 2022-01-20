@@ -1,5 +1,5 @@
 import createMollieClient from '@mollie/api-client';
-import { getMollieKey } from '../configuration';
+import { getMollieKey } from '../src/configuration';
 import { orderSetStatus, paymentUpdate } from '../propeller-api';
 
 const express = require('express');

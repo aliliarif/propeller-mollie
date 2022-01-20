@@ -1,4 +1,4 @@
-import { setup } from '../configuration';
+import { setup } from '../src/configuration';
 import path from 'path';
 
 export default function MollieModule(moduleOptions) {

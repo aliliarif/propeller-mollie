@@ -3,7 +3,7 @@ import {
   getMollieKey,
   getMollieRedirectUrl,
   getNotificationProxyUrl,
-} from '../configuration';
+} from '../src/configuration';
 import { paymentCreate } from '../propeller-api';
 
 const express = require('express');
