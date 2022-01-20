@@ -1,0 +1,26 @@
+{
+  "name": "propeller-mollie",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "files": [
+    "lib/**/*",
+    "src/**/*",
+    "nuxt/**/*",
+    "extension/**/*",
+    "notification/**/*",
+    "propeller-api/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
