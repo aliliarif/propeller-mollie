@@ -52,6 +52,8 @@ app.post('/', async (req, res) => {
           orderId: payment.metadata.orderId,
           status: 'NEW',
           payStatus: 'PAID',
+          sendOrderConfirmationEmail: true,
+          addPDFAttachment: true,
         });
 
         // return;

@@ -15,6 +15,8 @@ export default async (params) => {
       orderId: Number(params.orderId),
       status: params.status,
       payStatus: params.payStatus,
+      sendOrderConfirmationEmail: params.sendOrderConfirmationEmail || false,
+      addPDFAttachment: params.addPDFAttachment || false,
     },
   };
 

@@ -4,6 +4,7 @@ const defaultConfig = {
   mollieKey: null,
   mollieIsTest: true,
   mollieRedirectUrl: '/checkout/thank-you',
+  mollieWebhookUrl: '',
 };
 
 const config = {
@@ -16,6 +17,7 @@ interface Configuration {
   mollieKey: string;
   mollieIsTest: boolean;
   mollieRedirectUrl: string;
+  mollieWebhookUrl: string;
 }
 
 const setup = ({
@@ -24,6 +26,7 @@ const setup = ({
   mollieKey,
   mollieIsTest,
   mollieRedirectUrl,
+  mollieWebhookUrl,
 }: Configuration) => {
   if (!propellerKey) {
     console.error(
@@ -42,6 +45,7 @@ const setup = ({
   config.propellerKey = propellerKey;
   config.mollieKey = mollieKey;
   config.mollieRedirectUrl = mollieRedirectUrl;
+  config.mollieWebhookUrl = mollieWebhookUrl;
 
   if (propellerApiUrl) config.propellerApiUrl = propellerApiUrl;
   if (mollieIsTest) config.mollieIsTest = mollieIsTest;
@@ -52,6 +56,7 @@ const getPropellerApiUrl = () => config.propellerApiUrl;
 const getMollieKey = () => config.mollieKey;
 const getMollieIsTest = () => config.mollieIsTest;
 const getMollieRedirectUrl = () => config.mollieRedirectUrl;
+const getMollieWebhookUrl = () => config.mollieWebhookUrl;
 const getExtensionProxyUrl = () => `${window.location.origin}/mollie`;
 const getNotificationProxyUrl = () => '/mollie/notifications';
 
@@ -64,6 +69,7 @@ export {
   getMollieKey,
   getMollieIsTest,
   getMollieRedirectUrl,
+  getMollieWebhookUrl,
   getExtensionProxyUrl,
   getNotificationProxyUrl,
 };

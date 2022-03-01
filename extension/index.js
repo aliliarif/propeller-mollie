@@ -3,6 +3,7 @@ import {
   getMollieKey,
   getMollieRedirectUrl,
   getNotificationProxyUrl,
+  getMollieWebhookUrl,
 } from '../src/configuration';
 import { paymentCreate } from '../propeller-api';
 
@@ -46,9 +47,8 @@ app.post('/', async (req, res) => {
       method: 'creditcard',
       description: `Order ${orderId}`,
       redirectUrl,
-      // webhookUrl,
       // if you are developing locally, use ngrok to create a tunnel from a public host to your localhost to allow Mollie to access webhookUrl
-      webhookUrl: 'http://bdd1-78-157-31-8.ngrok.io/mollie/notifications',
+      webhookUrl: getMollieWebhookUrl(),
       metadata: {
         orderId,
       },
