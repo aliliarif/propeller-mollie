@@ -57,6 +57,7 @@ app.post('/', async (req, res) => {
           payStatus: 'PAID',
           sendOrderConfirmationEmail: true,
           addPDFAttachment: true,
+          deleteCart: true,
         });
 
         res.sendStatus(200);

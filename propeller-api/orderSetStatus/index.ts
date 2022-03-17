@@ -3,8 +3,6 @@ import { client } from '../apolloClient';
 import orderSetStatusQuery from './orderSetStatus';
 import { OrderSetStatusInput } from '../types/GraphQL';
 
-// TODO: move types/enums to saparated file
-
 type Variables = {
   input: OrderSetStatusInput;
 };
@@ -17,6 +15,7 @@ export default async (params) => {
       payStatus: params.payStatus,
       sendOrderConfirmationEmail: params.sendOrderConfirmationEmail || false,
       addPDFAttachment: params.addPDFAttachment || false,
+      deleteCart: params.deleteCart || false,
     },
   };
 

@@ -61,4 +61,5 @@ export type OrderSetStatusInput = {
   payStatus?: string;
   sendOrderConfirmationEmail?: boolean;
   addPDFAttachment?: boolean;
+  deleteCart?: boolean;
 };
