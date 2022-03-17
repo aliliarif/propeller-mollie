@@ -9,7 +9,7 @@ type Variables = {
 };
 
 export default async (params) => {
-  const amount = Number(params.amount) * 100;
+  const amount = Number(params.transaction.amount) * 100;
 
   const searchBy: SearchByInput = {};
 
@@ -21,14 +21,13 @@ export default async (params) => {
   const variables: Variables = {
     input: {
       addTransaction: {
-        // !TEMP: transactionId should not contain postfix type - it's added because of known bug
-        transactionId: params.transactionId + '_' + params.transactionType,
-        type: params.transactionType,
+        transactionId: params.transaction.transactionId,
+        type: params.transaction.type,
         amount,
-        currency: params.currency,
-        status: params.status,
+        currency: params.transaction.currency,
+        status: params.transaction.status,
       },
-      status: params.transactionType,
+      status: params.status,
     },
     searchBy,
   };

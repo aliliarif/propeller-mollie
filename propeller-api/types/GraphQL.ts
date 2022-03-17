@@ -1,10 +1,9 @@
 export enum TransactionTypes {
-  NA,
   AUTHORIZATION,
   CANCEL_AUTHORIZATION,
-  PAID,
-  REFUNDED,
   CHARGEBACK,
+  PAY,
+  REFUND,
 }
 
 export enum PaymentStatuses {
@@ -20,10 +19,10 @@ export enum PaymentStatuses {
 }
 
 export enum TransactionStatuses {
-  OPEN,
-  PENDING,
-  FAILED,
-  SUCCESS,
+  OPEN = 'OPEN',
+  PENDING = 'PENDING',
+  FAILED = 'FAILED',
+  SUCCESS = 'SUCCESS',
 }
 
 export type Transactions = {
@@ -31,11 +30,11 @@ export type Transactions = {
   amount: number;
   currency: string;
   type: TransactionTypes;
-  status?: TransactionStatuses;
+  status: TransactionStatuses;
 };
 
 export type CreatePaymentInput = {
-  transactions: Transactions;
+  addTransaction: Transactions;
   status: PaymentStatuses;
   orderId: number;
   userId: number;

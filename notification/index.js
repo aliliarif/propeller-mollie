@@ -41,11 +41,14 @@ app.post('/', async (req, res) => {
           searchBy: {
             paymentId: transactionId,
           },
-          transactionId,
-          transactionType: 'PAID',
-          amount: payment.amount.value,
-          currency: payment.amount.currency,
-          status: 'SUCCESS',
+          transaction: {
+            transactionId,
+            type: 'PAY',
+            amount: payment.amount.value,
+            currency: payment.amount.currency,
+            status: 'SUCCESS',
+          },
+          status: 'PAID',
         });
 
         orderSetStatus({
@@ -56,7 +59,6 @@ app.post('/', async (req, res) => {
           addPDFAttachment: true,
         });
 
-        // return;
         res.sendStatus(200);
       }
 

@@ -55,18 +55,20 @@ app.post('/', async (req, res) => {
     });
 
     // initialize payment for the order
-    // initialized payments are created with status 'OPEN'
-    const paymentData = {
-      transactionId: payment.id,
-      transactionType: 'NA',
+    // initialized payments are created with status 'OPEN' and transcation type 'AUTHORIZATION'
+    paymentCreate({
+      transaction: {
+        transactionId: payment.id,
+        type: 'AUTHORIZATION',
+        amount,
+        currency: req.body.currency,
+        status: 'OPEN',
+      },
       status: 'OPEN',
       orderId,
       userId: req.body.userId,
-      amount,
-      currency: req.body.currency,
       method: 'creditcard', // TODO: make this dynamic, support other methods of Mollie
-    };
-    paymentCreate(paymentData);
+    });
   } catch (error) {
     console.log(error);
     console.error('[Propeller-Mollie] Error creating payment');
@@ -80,8 +82,3 @@ app.post('/', async (req, res) => {
 });
 
 export default app;
-
-// export default (configuration) => {
-//   config = { ...configuration };
-//   return app;
-// };

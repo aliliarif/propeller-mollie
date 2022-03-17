@@ -8,23 +8,24 @@ type Variables = {
 };
 
 export default async (params) => {
-  const amount = Number(params.amount) * 100;
+  const amount = Number(params.transaction.amount) * 100;
 
   const variables: Variables = {
     input: {
-      transactions: {
-        transactionId: params.transactionId,
-        type: params.transactionType,
-        amount: amount,
-        currency: params.currency,
+      addTransaction: {
+        transactionId: params.transaction.transactionId,
+        type: params.transaction.type,
+        amount,
+        currency: params.transaction.currency,
+        status: params.transaction.status,
       },
       status: params.status,
       orderId: Number(params.orderId),
       userId: params.userId,
-      amount: amount,
-      currency: params.currency,
+      amount,
+      currency: params.transaction.currency,
       method: params.method,
-      paymentId: params.transactionId,
+      paymentId: params.transaction.transactionId,
     },
   };
 
